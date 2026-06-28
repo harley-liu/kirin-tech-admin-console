@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo-kirin.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kirin Technologies - IT Solutions & Services Australia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      (function() {
+        const observer = new MutationObserver(() => {
+          // 移除注入的 script 标签
+          document.querySelectorAll('script[src*="bolt.new"]').forEach(el => el.remove());
+          // 移除 badge 容器（fixed 定位在右下角）
+          document.querySelectorAll('div[style*="position: fixed"][style*="z-index: 2147483647"]').forEach(el => el.remove());
+        });
+        observer.observe(document.documentElement, { childList: true, subtree: true });
+      })();
+    </script>    
+  </body>
+</html>
